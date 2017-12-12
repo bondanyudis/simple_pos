@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/MKPL/simplepos-v.1.1.0';
+$config['base_url'] = 'http://localhost/MKPL/simple_pos';
 // $config['total_rows'] = $jumlah_data;
 // $config['per_page'] = 10;
 

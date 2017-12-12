@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dashboard admin</title>
+	<script type="text/javascript" src="<?php echo base_url('asset/bootstrap/js/bootstrap.js');?>"></script>
+<link href="<?php echo base_url('asset/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
+<link href="<?php echo base_url('asset/bootstrap/css/bootstrap-theme.min.css');?>" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <link href="<?php echo base_url('asset/font-awesome-4.7.0/css/font-awesome.min.css');?>" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/css.css');?>">
+</head>
+
+
+
+<body onload="startTime()">
+
+<nav class="navbar navbar-inverse b">
+  <div class="container-fluid b">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><i class="fa fa-home"></i>&nbsp Cms </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+    
+        <li><a href="" data-toggle="modal" data-target="#myModalout"><span class="fa fa-sign-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="" style="margin-left: 0px">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 das">
+    <div class="">
+      <img src="<?php echo base_url('asset/img/gb1.png');?>" class="img-responsive gb1" alt="Image">
+    </div>
+      <br>
+        <div class="container-fluid">
+          <div class="jam" id="txt" ></div>
+        </div>
+          <br>
+      <a  href="<?php echo site_url('adminController/tambahpegawai');?>" class="button2">  <span class="fa fa-user-plus"></span> tambah pegawai</a>
+         </div>
+    </div>
+
+
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 "style="padding-right: 1px" >
+    <table class="">
+      <tbody>
+        <tr>
+          <td> <h3 class="up" >Komponen Kepegawaian</h3></td>
+          <!-- <td style="padding-left:595px ; padding-right:0px;margin-right"> <form action="<?=base_url()?>adminController/cari" method="get">
+     <div class="input-group">
+ 
+      <input type="text" name="key" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">cari</button>
+      </span>
+    </div>
+       </form> </td> -->
+          
+        </tr>
+      </tbody>
+    </table>
+      
+   
+    <ol class="breadcrumb radius">
+      <li><a href="#"><span class="fa fa-home"></span> Beranda</a></li>
+      <!-- <li><a href="#"></a></li> -->
+      <li class="active">Daftar Pegawai</li>
+    </ol>
+<!-- ========================= -->
+<?php if($this->session->flashdata('tambahpegawai') == 'sukses'){?>
+    <div class="alert alert-success alert-dismissable b">
+    <a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong><span class="glyphicon glyphicon-thumbs-up"></span> 
+    Pegawai Sukses Ditambahkan</strong> 
+     </div>
+  <?php  }?>
+<!-- ========================= -->
+     
+      <!--   <a  href="<?php echo site_url('adminController/tambahpegawai');?>" class="button2">  <span class="glyphicon glyphicon-plus"></span> tambah pegawai</a> -->
+
+       
+         <hr>
+    
+</div>
+
+
+
+
+<div class="">
+  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    
+  </div>
+  <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 "style="padding-right: 1px">
+
+<table class="table table-bordered">
+<thead class="a">
+    <tr>
+      <th><span class=" fa fa-users"></span> Daftar Pegawai</th>
+    </tr>
+</thead>
+<tbody>
+      <tr>
+        <td>
+<table class="table table-hover table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama</th>
+      <th>Username</th>
+      <th>Id</th>
+  <!--     <th>Mulai</th> -->
+      <th>Alamat</th>
+      <th>Email</th>
+      <th>Nomor Hp</th>
+      <th>Tindakan</th>
+    </tr>
+  </thead>
+  <?php 
+ 
+  $no = $offset;
+  foreach ($menuAdmin as $pegawai) { ?>
+  <tbody>
+      <tr>
+        <td><?php echo  ++$no?></td>
+        <td><?php echo $pegawai->nama;?></td>
+        <td><?php echo $pegawai->username;?></td>
+        <td><?php echo $pegawai->id;?></td>
+      <!--   <td>Tgl <?php echo $pegawai->tanggalmasuk;?></td> -->
+        <td><?php echo $pegawai->alamat;?></td>
+        <td><?php echo $pegawai->email;?></td>
+        <td><?php echo $pegawai->nomorHp;?></td>
+        <td><a href="<?php echo site_url('adminController/editpegawai/'.$pegawai->id);?>"  class="button" style="background-color: #008CBA"><span class=" fa fa-pencil-square-o"></span> Edit</a>
+        <br>
+       <!-- <a href="<?php echo site_url('adminController/deleteUser/'.$pegawai->id);?>"  class="button" style="background-color: #f44336" >  <span class=" glyphicon glyphicon-trash"></span> Delete</a> -->
+       <button type="button" class="button" data-toggle="modal" data-target="#myModal" style="background-color: #f44336"><span class="fa fa-trash-o"></span> Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  <?php } ?>
+  </table>
+<!-- <div class="panel-footer" style="height:40px;"> -->
+        <?php echo $halaman ?> <!--Memanggil variable pagination-->
+        <!-- </div> -->
+  </td>
+  
+      </tr>
+      
+</tbody>
+ 
+</table>
+
+</div>
+</div>
+ <!-- Modal -->
+  <div class="modal fade mod" id="myModal" role="dialog">
+    <div class="modal-dialog mod">
+    
+      <!-- Modal content-->
+      <div class="modal-content mod">
+        <div class="modal-header ">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Konfirmasi</h4>
+        </div>
+        <div class="modal-body">
+          <p>tetap ingin menghapus ?</p>
+        </div>
+        <div class="modal-footer ">
+
+         <a href="<?php echo site_url('adminController/deleteUser/'.$pegawai->id);?>"  class="button" style="background-color: #f44336" >  Hapus</a>
+          <button type="button" class="button" data-dismiss="modal">batal</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+<!-- Modal keluar-->
+  <div class="modal fade mod" id="myModalout" role="dialog">
+    <div class="modal-dialog mod">
+    
+      <!-- Modal content-->
+      <div class="modal-content mod">
+        <div class="modal-header ">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Konfirmasi</h4>
+        </div>
+        <div class="modal-body">
+          <p>tetap ingin keluar ?</p>
+        </div>
+        <div class="modal-footer ">
+
+         <a href="<?php echo site_url('LoginControl/logout'); ?>"  class="button" style="background-color: #f44336" >  iya</a>
+          <button type="button" class="button" data-dismiss="modal">batal</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<script>
+
+  $("a[href='#top']").click(function() {
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+     return false;
+  });
+</script>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+</body>
+</html>

@@ -38,12 +38,12 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#example').DataTable( {
-    "bLengthChange": false,
+          "bLengthChange": true,
     "bFilter": true,
     "bInfo": false,
     "bAutoWidth": false
-      }
-                             );
+        }
+        );
     }
                      );
   </script>

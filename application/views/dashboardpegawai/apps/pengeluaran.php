@@ -1,4 +1,4 @@
-f<table class="" style="width:100%">
+<table class="" style="width:100%">
   <tr>
     <td style="width:100%">
       <h3 class="up" >Pengeluaran 

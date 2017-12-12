@@ -5,7 +5,7 @@
       </h3>
     </td>
     <td> 
-      <a class="btn btn-default btn-circle"   href="<?php echo site_url('pemasukan/viewtambahpemasukan2'); ?>" role="button">
+      <a class="btn btn-default btn-circle"   href="<?php echo site_url('pemasukan/viewtambahpemasukan'); ?>" role="button">
         <span class="fa fa-plus">
         </span>
       </a>

@@ -193,7 +193,7 @@
         <section class="sidebar ">
           <br>
           <div class="user-panel">
-            <img src="<?php echo base_url('asset/img/aaa.png');?>"  alt="Cinque Terre"  height="95" style="margin-left:9px " >
+            <img src="<?php echo base_url('asset/img/grog.png');?>"  alt="Cinque Terre"  height="83" style="margin-left:3px " >
             <br>
           </div>
           <br>
@@ -248,6 +248,17 @@
         </span>
       </a>
       </li>
+      <li  
+        <?php if($ha == '5'){ ?>
+    class="active"
+    <?php } ?>>
+    <a href="<?php echo site_url('pegawaiController/viewproduklayanan'); ?>">
+      <i class="fa fa-list-ol">
+      </i> 
+      <span>Layanan
+      </span>
+    </a>
+    </li>
     
   <!-- class="active" -->
   </ul>
@@ -274,7 +285,7 @@
     <div class="notice notice-info">
       <strong>Informasi 
       </strong>  Kunjungi 
-      <a class="" href="http://www.cims.co.id" role="">www.cims.co.id
+      <a class="" href="http://www.google.co.id" role="">www.google.co.id
       </a>  
     </div>
     <br>

@@ -259,8 +259,8 @@ $mtr->motor_kode;?>?
       </div>
       <!-- Default to the left -->
       <strong>Copyright &copy; 2017 
-        <a href="http://www.cims.co.id/">www.cims.co.id
-        </a>.
+        <a href="http://www.google.co.id/">www.google.co.id
+        </a>
       </strong> 
     </footer>
   </div>

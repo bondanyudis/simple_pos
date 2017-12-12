@@ -20,7 +20,6 @@
   <label>Filter
   </label>
   <div class="input-group col-md-3">
-    <!-- mengubab input text menjadi select -->
     <select name="cari" id="input" class="form-control" required="required">
       <option value="2010">2010</option>
       <option value="2011">2011</option>
@@ -31,7 +30,6 @@
       <option value="2016">2016</option>
       <option value="2017">2017</option>
     </select>
-  <!-- mengubah input text menjadi select -->
     <span class="input-group-btn">
       <button class="btn btn-info" type="submit">
         <span class=" glyphicon glyphicon-search">

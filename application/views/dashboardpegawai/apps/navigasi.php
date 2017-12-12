@@ -38,12 +38,25 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#example').DataTable( {
-          "bLengthChange": true,
-    "bFilter": true,
-    "bInfo": false,
-    "bAutoWidth": false
+        "language": {
+          "sProcessing":   "Sedang memproses...",
+          "sLengthMenu":   "Tampilkan _MENU_ entri",
+          "sZeroRecords":  "Tidak ditemukan data yang sesuai",
+          "sInfo":         "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+          "sInfoEmpty":    "Menampilkan 0 sampai 0 dari 0 entri",
+          "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+          "sInfoPostFix":  "",
+          "sSearch":       "Cari:",
+          "sUrl":          "",
+          "oPaginate": {
+            "sFirst":    "Pertama",
+            "sPrevious": "Sebelumnya",
+            "sNext":     "Selanjutnya",
+            "sLast":     "Terakhir"
+          }
         }
-        );
+      }
+                             );
     }
                      );
   </script>
@@ -152,7 +165,7 @@
         <section class="sidebar ">
           <br>
           <div class="user-panel">
-            <img src="<?php echo base_url('asset/img/aaa.png');?>"  alt="Cinque Terre"  height="95" style="margin-left:9px " >
+            <img src="<?php echo base_url('asset/img/grog.png');?>"  alt="Cinque Terre"  height="83" style="margin-left:3px " >
             <br>
           </div>
           <br>
@@ -209,6 +222,18 @@
         </span>
       </a>
       </li>
+
+      <li  
+        <?php if($ha == '5'){ ?>
+    class="active"
+    <?php } ?>>
+    <a href="<?php echo site_url('pegawaiController/viewproduklayanan'); ?>">
+      <i class="fa fa-list-ol">
+      </i> 
+      <span>Layanan
+      </span>
+    </a>
+    </li>
     
   <!-- class="active" -->
   </ul>
